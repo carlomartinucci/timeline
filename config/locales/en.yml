@@ -1,0 +1,429 @@
+---
+en:
+  activerecord:
+    attributes:
+      attachment:
+        alt: Alternate text
+        file: File
+        main: Main
+      category:
+        created_at: Created at
+        description: Description
+        disabled: Disabled
+        icon: Icon
+        name: Name
+        parent: Parent
+        position: Position
+        updated_at: Updated at
+      common:
+        alt: Alternate text
+        file: File
+        main: Main
+      image:
+        alt: Alternate text
+        file: File
+        main: Main
+      post:
+        body: Body
+        category: Category
+        created_at: Created at
+        published: Published
+        published_at: Published at
+        title: Title
+        updated_at: Updated at
+      user:
+        avatar: Avatar
+        bio: Bio
+        birthday: Birthday
+        confirmed_at: Confirmed at
+        created_at: Created at
+        current_password: Current password
+        email: Email
+        first_name: First name
+        gender: Gender
+        last_access_at: Last access at
+        last_name: Last name
+        locale: Locale
+        password: Password
+        password_confirmation: Password confirmation
+        referer: Referer user
+        role: Role
+        updated_at: Updated at
+        username: Username
+        website: Website
+      video:
+        alt: Alternate text
+        file: File
+        main: Main
+    models:
+      attachment:
+        one: attachment
+        other: attachments
+      category:
+        one: category
+        other: categories
+      image:
+        one: image
+        other: images
+      post:
+        one: post
+        other: posts
+      user:
+        one: user
+        other: users
+      video:
+        one: video
+        other: videos
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%-d %b %Y"
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: "%{count} hours"
+      about_x_months:
+        one: about 1 month
+        other: "%{count} months"
+      about_x_years:
+        one: about 1 year
+        other: "%{count} years"
+      almost_x_years:
+        one: almost 1 year
+        other: "%{count} years"
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: "%{count} minutes"
+      less_than_x_seconds:
+        one: less than 1 second
+        other: "%{count} seconds"
+      over_x_years:
+        one: over 1 year
+        other: "%{count} years"
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise:
+    confirmations:
+      confirmed: Your account was successfully confirmed
+      send_instructions: You will receive an email with instructions about how to confirm your account
+        in a few minutes
+      send_paranoid_instructions: >-
+        If your e-mail exists on our database, you will receive an email with instructions about how
+        to confirm your account in a few minutes
+    failure:
+      already_authenticated: You are already logged in
+      inactive: Your account was not activated yet or has been suspended
+      invalid: Invalid email or password
+      invalid_token: Invalid authentication token
+      locked: Your account has been locked due to an excessive amount of unsuccessful log in attempts
+      timeout: Your session expired, please log in again to continue
+      unauthenticated: You need to log in or register before continuing
+      unconfirmed: You have to confirm your account before continuing
+      user:
+        not_found_in_database: Invalid email or password
+    invitations:
+      edit:
+        header: Set your password
+        submit_button: Set my password
+      invitation_token_invalid: The invitation token provided is not valid!
+      new:
+        header: Send invitation
+        submit_button: Send an invitation
+      no_invitations_remaining: No invitations remaining
+      send_instructions: An invitation email has been sent to %{email}
+      updated: Your password was set successfully
+    mailer:
+      confirmation_instructions:
+        subject: "[mtga] Welcome!"
+      invitation_instructions:
+        subject: "[mtga] You've been invited to join us"
+      reset_password_instructions:
+        subject: "[mtga] Password Change"
+      unlock_instructions:
+        subject: "[mtga] Unlock Account"
+    omniauth:
+      user:
+        failure: Impossible to authenticate
+    omniauth_callbacks:
+      failure: 'Could not authenticated you from %{kind}: %{reason}'
+      success: Successfully authenticated from %{kind} account
+    passwords:
+      send_paranoid_instructions: If your e-mail exists on our database, you will receive a password
+        recovery link on your e-mail
+      sent_instructions: >-
+        We sent you a confirmation via email, please follow the link to finalize your registration
+        (if you can't find the confirmation mail, please check your junk mail folder)
+      updated: Your password was changed successfully
+      updated_not_active: Your password was changed successfully
+    registrations:
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon
+      signed_up: Welcome! You have signed up successfully
+      signed_up_but_inactive: >-
+        You have signed up successfully. However, we could not sign you in because your account is
+        not yet activated
+      signed_up_but_locked: >-
+        You have signed up successfully. However, we could not sign you in because your account is
+        locked
+      signed_up_but_unconfirmed: >-
+        We sent you a confirmation via email, please follow the link to finalize your registration
+        (if you can't find the confirmation mail, please check your junk mail folder)
+      update_needs_confirmation: >-
+        You updated your account successfully, but we need to verify your new email address: please
+        check your email and click on the confirm link to finalize confirming your new email address
+      updated: " "
+    sessions:
+      signed_in: Signed in successfully
+      signed_out: Signed out successfully
+      user:
+        already_signed_out: User already signed out
+    unlocks:
+      send_instructions: You will receive an email with instructions about how to unlock your account
+        in a few minutes
+      send_paranoid_instructions: >-
+        If your account exists, you will receive an email with instructions about how to unlock it
+        in a few minutes
+      unlocked: Your account has been unlocked successfully
+    views:
+      buttons:
+        change_password: Change your password
+        finalize_registration: Finalize
+        resend_confirmation_instructions: Resend confirmation instructions
+        resend_unlock_instructions: Resend unlock instructions
+        reset_password_instructions: Resend reset password instructions
+        sign_in: Log in
+        sign_off: Sign off
+        sign_up: Sign up!
+      links:
+        resend_confirmation_instructions: Didn't receive confirmation instructions?
+        resend_unlock_instructions: Didn't receive unlock instructions?
+        reset_password_instructions: Forgot your password?
+        sign_in: Log in
+        sign_in_with_provider: Sign in with %{provider}
+        sign_off: Sign off
+        sign_up: Sign up
+      or: or
+      titles:
+        change_password: Change your password
+        finalize_registration: Finalize registration
+        resend_confirmation_instructions: Resend confirmation instructions
+        resend_unlock_instructions: Resend unlock instructions
+        reset_password_instructions: Forgot your password?
+        sign_in: Log in
+        sign_off: Sign off
+        sign_up: Sign up
+  errors:
+    format: "%{message}"
+    messages:
+      accepted: "%{attribute} must be accepted"
+      already_confirmed: "%{attribute} was already confirmed, please try signing in"
+      blank: "%{attribute} can't be blank"
+      carrierwave_download_error: could not be downloaded
+      carrierwave_integrity_error: is not of an allowed file type
+      carrierwave_processing_error: failed to be processed
+      confirmation: "%{attribute} confirmation doesn't match"
+      content_type_blacklist_error: You are not allowed to upload %{content_type} files
+      content_type_whitelist_error: You are not allowed to upload %{content_type} files
+      empty: "%{attribute} can't be empty"
+      equal_to: "%{attribute} must be equal to %{count}"
+      even: "%{attribute} must be even"
+      exclusion: "%{attribute} is reserved"
+      expired: "%{attribute} has expired, please request a new one"
+      extension_blacklist_error: 'You are not allowed to upload %{extension} files, prohibited types:
+        %{prohibited_types}'
+      extension_whitelist_error: 'You are not allowed to upload %{extension} files, allowed types:
+        %{allowed_types}'
+      greater_than: "%{attribute} must be greater than %{count}"
+      greater_than_or_equal_to: "%{attribute} must be greater than or equal to %{count}"
+      inclusion: "%{attribute} is not included in the list"
+      invalid: "%{attribute} is invalid"
+      less_than: "%{attribute} must be less than %{count}"
+      less_than_or_equal_to: "%{attribute} must be less than or equal to %{count}"
+      max_size_error: File size should be less than %{max_size}
+      min_size_error: File size should be greater than %{min_size}
+      mini_magick_processing_error: 'Failed to manipulate with MiniMagick, maybe it is not an image?
+        Original Error: %{e}'
+      not_a_number: "%{attribute} is not a number"
+      not_an_integer: "%{attribute} must be an integer"
+      not_found: "%{attribute} not found"
+      not_locked: "%{attribute} was not locked"
+      not_saved:
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+      odd: "%{attribute} must be odd"
+      other_than: "%{attribute} must be other than %{count}"
+      present: "%{attribute} must be blank"
+      record_invalid: 'Validation failed: %{errors}'
+      required: "%{attribute} is required"
+      restrict_dependent_destroy:
+        many: Cannot delete record because dependent %{record} exist
+        one: Cannot delete record because a dependent %{record} exists
+      rmagick_processing_error: Failed to manipulate with rmagick, maybe it is not an image?
+      taken: "%{attribute} has already been taken"
+      too_long:
+        one: "%{attribute} is too long (maximum 1 character)"
+        other: "%{attribute} is too long (maximum %{count} characters)"
+      too_short:
+        one: "%{attribute} is too short (minimum is 1 character)"
+        other: "%{attribute} is too short (minimum is %{count} characters)"
+      wrong_length:
+        one: "%{attribute} is the wrong length (should be 1 character)"
+        other: "%{attribute} is the wrong length (should be %{count} characters)"
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: "%{count} errors prohibited this %{model} from being saved"
+  flash:
+    alert:
+      impossible_update_profile: 'Impossible update profile: %{reason}'
+    notice:
+      profile_was_successfully_updated: Profile was successfully updated
+      social_account_successfully_linked: "%{provider} account successfully linked"
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  locales:
+    en: English
+    it: Italian
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  profile:
+    access_info: Access info
+    connect_provider: Connect %{provider} account
+    disconnect_provider: Disconnect %{provider} account
+    edit: Edit profile
+    female: Female
+    general_info: General info
+    male: Male
+    oauth: Social connections
+    refresh_provider: Refresh %{provider} account
+    settings: Settings
+    title: Edit your profile
+  seo:
+    description: Site description
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      short: "%-d %b %Y"
+      default: "%-d %b %Y, %l:%M%p"
+      long: "%-d %b %Y, %l:%M:%S%p"
+      no_date: "%l:%M:%S %p"
+      no_time: "%-d %b %Y"
+    pm: pm
+  unauthorized:
+    default: You are not authorized to access this page

@@ -1,0 +1,430 @@
+---
+it:
+  activerecord:
+    attributes:
+      attachment:
+        alt: Testo alternativo
+        file: File
+        main: Principale
+      category:
+        created_at: Creata il
+        description: Descrizione
+        disabled: Disabilitata
+        icon: Icona
+        name: Nome
+        parent: Padre
+        position: Posizione
+        updated_at: Aggiornata il
+      common:
+        alt: Testo alternativo
+        file: File
+        main: Principale
+      image:
+        alt: Testo alternativo
+        file: File
+        main: Principale
+      post:
+        body: Corpo
+        category: Categoria
+        created_at: Creato il
+        published: Pubblicato
+        published_at: Pubblicare il
+        title: Titolo
+        updated_at: Aggiornato il
+      user:
+        avatar: Avatar
+        bio: Biografia
+        birthday: Compleanno
+        confirmed_at: Confermato il
+        created_at: Creato il
+        current_password: Password corrente
+        email: Email
+        first_name: Nome
+        gender: Sesso
+        last_access_at: Ultimo accesso il
+        last_name: Cognome
+        locale: Lingua
+        password: Password
+        password_confirmation: Password di conferma
+        referer: Utente di riferimento
+        role: Ruolo
+        updated_at: Aggiornato il
+        username: Username
+        website: Website
+      video:
+        alt: Testo alternativo
+        file: File
+        main: Principale
+    models:
+      attachment:
+        one: allegato
+        other: allegati
+      category:
+        one: categoria
+        other: categorie
+      image:
+        one: immagine
+        other: immagini
+      post:
+        one: messaggio
+        other: messaggi
+      user:
+        one: utente
+        other: utenti
+      video:
+        one: video
+        other: video
+  date:
+    abbr_day_names:
+    - Dom
+    - Lun
+    - Mar
+    - Mer
+    - Gio
+    - Ven
+    - Sab
+    abbr_month_names:
+    -
+    - Gen
+    - Feb
+    - Mar
+    - Apr
+    - Mag
+    - Giu
+    - Lug
+    - Ago
+    - Set
+    - Ott
+    - Nov
+    - Dic
+    day_names:
+    - Domenica
+    - Lunedì
+    - Martedì
+    - Mercoledì
+    - Giovedì
+    - Venerdì
+    - Sabato
+    formats:
+      default: "%-d %b %Y"
+    month_names:
+    -
+    - Gennaio
+    - Febbraio
+    - Marzo
+    - Aprile
+    - Maggio
+    - Giugno
+    - Luglio
+    - Agosto
+    - Settembre
+    - Ottobre
+    - Novembre
+    - Dicembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: circa 1 ora fa
+        other: circa %{count} ore fa
+      about_x_months:
+        one: circa 1 mese fa
+        other: circa %{count} mesi fa
+      about_x_years:
+        one: circa 1 anno fa
+        other: circa %{count} anni fa
+      almost_x_years:
+        one: quasi 1 anno fa
+        other: quasi %{count} anni fa
+      half_a_minute: mezzo minuto fa
+      less_than_x_minutes:
+        one: meno di 1 minuto fa
+        other: meno di %{count} minuti fa
+      less_than_x_seconds:
+        one: meno di 1 secondo fa
+        other: meno di %{count} secondi fa
+      over_x_years:
+        one: oltre 1 anno fa
+        other: oltre %{count} anni fa
+      x_days:
+        one: 1 giorno fa
+        other: "%{count} giorni fa"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minuti fa"
+      x_months:
+        one: 1 mese fa
+        other: "%{count} mesi fa"
+      x_seconds:
+        one: 1 secondo fa
+        other: "%{count} secondi fa"
+    prompts:
+      day: Giorno
+      hour: Ora
+      minute: Minuto
+      month: Mese
+      second: Secondi
+      year: Anno
+  devise:
+    confirmations:
+      confirmed: Il tuo account è stato confermato correttamente
+      send_instructions: A breve riceverai un'e-mail con le istruzioni per confermare il tuo account
+      send_paranoid_instructions: >-
+        Se il tuo indirizzo e-mail è registrato correttamente, a breve riceverai le istruzioni per
+        confermare la tua registrazione
+    failure:
+      already_authenticated: Sei già loggato
+      inactive: ll tuo account non è stato ancora attivato oppure è stato sospeso temporaneamente
+      invalid: E-mail o password non corretti
+      invalid_token: Token di autenticazione non valido
+      locked: >-
+        Il tuo account è stato bloccato a causa di un numero eccessivo di tentativi di accesso non
+        andati a buon fine
+      timeout: La sessione è scaduta, accedi nuovamente per continuare
+      unauthenticated: È necessario riloggarsi oppure registrarsi per continuare
+      unconfirmed: È necessario confermare la registrazione per continuare.
+      user:
+        not_found_in_database: E-mail o password non corretti
+    invitations:
+      edit:
+        header: Imposta la password
+        submit_button: Imposta la mia password
+      invitation_token_invalid: L'invitation token fornito non è valido!
+      new:
+        header: Manda invito
+        submit_button: Manda un invito
+      no_invitations_remaining: Non rimangono inviti da inviare
+      send_instructions: Un'e-mail di invito è stata inviata a %{email}
+      updated: La tua password è stata impostata correttamente
+    mailer:
+      confirmation_instructions:
+        subject: "[mtga] Adesso sei dei nostri, benvenuto!"
+      invitation_instructions:
+        subject: "[mtga] Sei stato invitato a unirti a noi"
+      reset_password_instructions:
+        subject: "[mtga] Modifica della password"
+      unlock_instructions:
+        subject: "[mtga] Sblocca il tuo account"
+    omniauth:
+      user:
+        failure: Impossibile eseguire l'autenticazione
+    omniauth_callbacks:
+      failure: 'Non riesco ad autenticarti da %{kind}: %{reason}'
+      success: Autenticato con successo dall'account di %{kind}
+    passwords:
+      send_paranoid_instructions: >-
+        Se il tuo indirizzo è registrato correttamente, a breve riceverai una e-mail di recupero della
+        password
+      sent_instructions: >-
+        Ti è appena stata inviata una e-mail per confermare la tua registrazione: segui le istruzioni
+        per attivare il tuo account (se credi di non averla ricevuta verifica che non sia finita nella
+        posta indesiderata)
+      updated: La tua password è stata cambiata correttamente
+      updated_not_active: La tua password è stata cambiata correttamente
+    registrations:
+      destroyed: >-
+        Il tuo account è stato cancellato come da tua richiesta, ci spiace ma speriamo ad ogni modo
+        di rivederti presto
+      signed_up: Benvenuto! Ti sei registrato correttamente
+      signed_up_but_inactive: >-
+        Benché tu ti sia registrato correttamente, non puoi ancora accedere in quanto non hai ancora
+        activate il tuo account
+      signed_up_but_locked: >-
+        Benché tu ti sia registrato correttamente, non puoi ancora accedere in quanto il tuo account
+        è al momento bloccato
+      signed_up_but_unconfirmed: >-
+        Ti è appena stata inviata una e-mail per confermare la tua registrazione: segui le istruzioni
+        per attivare il tuo account (se credi di non averla ricevuta verifica che non sia finita nella
+        posta indesiderata)
+      update_needs_confirmation: >-
+        Il tuo account è stato aggiornato correttamente, ma abbiamo bisogno di verificare il tuo nuovo
+        indirizzo di posta: per favore, clicca sul link nell'e-mail di verifica ricevuta, per confermare
+        l'avvenuto cambiamento
+      updated: " "
+    sessions:
+      signed_in: Accesso effettuato con successo
+      signed_out: Sei uscito con successo
+      user:
+        already_signed_out: User already signed out
+    unlocks:
+      send_instructions: A breve, riceverai una e-mail con le istruzioni per sbloccare il tuo
+      send_paranoid_instructions: Se il tuo account esiste, a breve riceverai un'e-mail con le istruzioni
+        per sbloccarlo
+      unlocked: A breve, riceverai una e-mail con le istruzioni per sbloccare il tuo
+    views:
+      buttons:
+        change_password: Cambia la tua password
+        finalize_registration: Finalizza
+        resend_confirmation_instructions: Invia nuovamente le istruzioni per confermare la registrazione
+        resend_unlock_instructions: Invia istruzioni per sbloccare il mio account
+        reset_password_instructions: Invia istruzioni per resettare la password
+        sign_in: Accedi
+        sign_off: Disconnetti
+        sign_up: Registrati!
+      links:
+        resend_confirmation_instructions: Non hai ricevuto la mail di conferma?
+        resend_unlock_instructions: Non hai ricevuto la mail di sblocco?
+        reset_password_instructions: Password domenticata?
+        sign_in: Accedi
+        sign_in_with_provider: Accedi con %{provider}
+        sign_off: Disconnetti
+        sign_up: Registrati
+      or: oppure
+      titles:
+        change_password: Cambia la tua password
+        finalize_registration: Finalizza la registrazione
+        resend_confirmation_instructions: Istruzioni di conferma
+        resend_unlock_instructions: Istruzioni di sblocco account
+        reset_password_instructions: Password dimenticata?
+        sign_in: Accedi
+        sign_off: Disconnetti
+        sign_up: Registrazione
+  errors:
+    format: "%{message}"
+    messages:
+      accepted: "%{attribute} deve essere accettata"
+      already_confirmed: "%{attribute} già confermato, riprova ad accedere"
+      blank: "%{attribute} non può essere lasciato in bianco"
+      carrierwave_download_error: Non è stato possibile scaricare l'immagine
+      carrierwave_integrity_error: Il file prescelto non è un'immagine
+      carrierwave_processing_error: Non è stato possibile ridimensionare l'immagine
+      confirmation: "%{attribute} di conferma non corrisponde"
+      content_type_blacklist_error: Non puoi caricare file di tipo "%{content_type}"
+      content_type_whitelist_error: Non puoi caricare file di tipo "%{content_type}"
+      empty: "%{attribute} non può essere lasciato vuoto"
+      equal_to: "%{attribute} deve essere uguale a %{count}"
+      even: "%{attribute} deve essere pari"
+      exclusion: "%{attribute} è riservato"
+      expired: "%{attribute} è scaduto, richiedi una nuova"
+      extension_blacklist_error: Non puoi caricare file %{extension}, quelli non permessi sono "%{prohibited_types}"
+      extension_whitelist_error: Non puoi caricare file %{extension}, quelli permessi sono "%{allowed_types}"
+      greater_than: "%{attribute} deve essere superiore a %{count}"
+      greater_than_or_equal_to: "%{attribute} deve essere maggiore o uguale a %{count}"
+      inclusion: "%{attribute} non è incluso nella lista"
+      invalid: "%{attribute} non è valido"
+      less_than: "%{attribute} deve essere minore di %{count}"
+      less_than_or_equal_to: "%{attribute} deve essere minore o uguale a %{count}"
+      max_size_error: Il file deve essere più piccolo di %{max_size}
+      min_size_error: Il file deve essere più grande di %{min_size}
+      mini_magick_processing_error: 'Errore da MiniMagick, il file non è un''immagine? Errore originale:
+        %{e}'
+      not_a_number: "%{attribute} non è un numero"
+      not_an_integer: "%{attribute} non è un numero intero"
+      not_found: "%{attribute} non è stato trovato"
+      not_locked: "%{attribute} non è bloccato"
+      not_saved:
+        one: 'Un errore ha impedito che questo/a %{resource} venisse salvato/a:'
+        other: "%{count} errori hanno impedito che questo/a %{resource} venisse salvato/a:"
+      odd: "%{attribute} deve essere dispari"
+      other_than: "%{attribute} deve essere diverso da %{count}"
+      present: "%{attribute} deve essere lasciato in bianco"
+      record_invalid: 'Validazione fallita: %{errors}'
+      required: "%{attribute} è obbligatorio"
+      restrict_dependent_destroy: Impossibile cancellare il record perchè la dipendenza %{record}
+        esiste
+      rmagick_processing_error: Errore di elaborazione di RMagick
+      taken: "%{attribute} è già in uso"
+      too_long:
+        one: "%{attribute} è troppo lungo (il massimo è 1 carattere)"
+        other: "%{attribute} è troppo lungo (il massimo è %{count} caratteri)"
+      too_short:
+        one: "%{attribute} è troppo corto (il minimo è 1 carattere)"
+        other: "%{attribute} è troppo corto (il minimo è %{count} caratteri)"
+      wrong_length:
+        one: "%{attribute} è della lunghezza sbagliata (dovrebbe misurare 1 carattere)"
+        other: "%{attribute} è della lunghezza sbagliata (dovrebbe misurare %{count} caratteri)"
+    template:
+      body: 'Per favore ricontrolla i seguenti campi:'
+      header:
+        one: 1 errore non ha consentito che questo/a %{model} venisse salvato/a
+        other: "%{count} errori non hanno consentito che questo/a %{model} venisse salvato/a"
+  flash:
+    alert:
+      impossible_update_profile: 'Impossibile aggiornare il profilo: %{reason}'
+    notice:
+      profile_was_successfully_updated: Profilo aggiornato con successo
+      social_account_successfully_linked: Account di %{provider} collegato con successo
+  helpers:
+    select:
+      prompt: Per favore, seleziona
+    submit:
+      create: Crea %{model}
+      submit: Invia %{model}
+      update: Aggiorna %{model}
+  locales:
+    en: Inglese
+    it: Italiano
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliardi
+          million: Milioni
+          quadrillion: Biliardi
+          thousand: Mila
+          trillion: Bilioni
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  profile:
+    access_info: Informazioni di accesso
+    connect_provider: Connetti %{provider} account
+    disconnect_provider: Disconnetti %{provider} account
+    edit: Modifica profilo
+    female: Femmina
+    general_info: Informazioni generali
+    male: Maschio
+    oauth: Connessioni sociali
+    refresh_provider: Aggiorna %{provider} account
+    settings: Impostazioni
+    title: Modifica il tuo profilo
+  seo:
+    description: Descrizione sito
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%-d %b %Y, %H:%M"
+      long: "%-d %b %Y, %H:%M:%S"
+      no_date: "%H:%M:%S"
+      no_time: "%-d %b %Y"
+    pm: pm
+  unauthorized:
+    default: Non sei autorizzato ad accedere a questa pagina

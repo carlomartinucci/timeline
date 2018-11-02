@@ -1,0 +1,22 @@
+<div class="list-group">
+  <% if controller_name != 'sessions' %>
+    <%= link_to t('devise.views.links.sign_in'), new_session_path(:user), class: 'list-group-item' %>
+  <% end %>
+  <% if Devise.mappings[:user].registerable? && controller_name != 'registrations' %>
+    <%= link_to t('devise.views.links.sign_up'), new_registration_path(:user), class: 'list-group-item' %>
+  <% end %>
+  <% if Devise.mappings[:user].recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to t('devise.views.links.reset_password_instructions'), new_password_path(:user), class: 'list-group-item' %>
+  <% end %>
+  <% if Devise.mappings[:user].confirmable? && controller_name != 'confirmations' %>
+    <%= link_to t('devise.views.links.resend_confirmation_instructions'), new_confirmation_path(:user), class: 'list-group-item' %>
+  <% end %>
+  <% if Devise.mappings[:user].lockable? && User.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+    <%= link_to t('devise.views.links.resend_unlock_instructions'), new_unlock_path(:user), class: 'list-group-item' %>
+  <% end %>
+  <% if Devise.mappings[:user].omniauthable? %>
+    <% User.omniauth_providers.each do |provider| %>
+      <%= link_to t('devise.views.links.sign_in_with_provider', provider: provider.to_s.titleize), omniauth_authorize_path(:user, provider), class: 'list-group-item' %>
+    <% end %>
+  <% end %>
+</div>

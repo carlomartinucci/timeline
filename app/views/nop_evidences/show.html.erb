@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nop Evidence <%= @nop_evidence.id %></h1>
+
+<p>
+  <strong>Claim:</strong>
+  <%= link_to @nop_evidence.claim.title, @nop_evidence.claim %><br/>
+  <%= @nop_evidence.claim.body %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= link_to @nop_evidence.source.title, @nop_evidence.source %><br/>
+  <%= @nop_evidence.source.body %>
+</p>
+
+<%= link_to 'Edit', edit_nop_evidence_path(@nop_evidence) %> |
+<%= link_to 'Back', nop_evidences_path %>

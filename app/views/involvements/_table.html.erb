@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Claim</th>
+      <th>Happened At</th>
+      <th>Claimed At</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% involvements.each do |involvement| %>
+      <tr>
+        <td><%= link_to person_name_and_dates(involvement.person), involvement.person %></td>
+        <td><%= link_to involvement.claim.title, involvement.claim %></td>
+        <td><%=l involvement.claim.happened_at, format: :short %></td>
+        <td><%=l involvement.claim.claimed_at, format: :short %></td>
+        <td>
+          <%= link_to 'E', edit_involvement_path(involvement) %>
+          <%= link_to 'D', involvement, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

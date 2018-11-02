@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Yes Evidence <%= @yes_evidence.id %></h1>
+
+<p>
+  <strong>Claim:</strong>
+  <%= link_to @yes_evidence.claim.title, @yes_evidence.claim %><br/>
+  <%= @yes_evidence.claim.body %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= link_to @yes_evidence.source.title, @yes_evidence.source %><br/>
+  <%= @yes_evidence.source.body %>
+</p>
+
+<%= link_to 'Edit', edit_yes_evidence_path(@yes_evidence) %> |
+<%= link_to 'Back', yes_evidences_path %>

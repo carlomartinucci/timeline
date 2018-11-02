@@ -1,0 +1,81 @@
+.popover {
+  max-width: none;
+  .popover-header {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.flash { z-index: $zindex-flash; }
+
+.field_with_errors .form-control { @extend .is-invalid; }
+.field_with_errors label {
+  color: $danger;
+  border-bottom: 1px dotted $danger;
+}
+.invalid-feedback { display: block; }
+
+.container--sm {
+  @extend .container;
+  max-width: 720px;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-info, .btn-info:active, .btn-info:hover, .btn-info:visited, .btn-info:focus { color: $blue !important; }
+
+.btn-white, .btn-white:active, .btn-white:hover, .btn-white:visited, .btn-white:focus {
+  color: $blue !important;
+  background-color: $white !important;
+}
+
+.modal {
+  width: auto;
+}
+
+.tooltip {
+  .tooltip-inner {
+    box-shadow: 0 2px 8px 0 $box-shadow-color;
+  }
+}
+
+.badge {
+  font-weight: normal;
+}
+
+.btn-secondary, .badge-secondary {
+  color: $white !important;
+}
+
+.ss { padding-bottom: 3px; }
+
+.list-inline-item .active {
+  padding: map-get($spacers, 2);
+  color: $secondary;
+  border-bottom: 2px solid $secondary;
+}
+
+// Responsive card deck
+
+$cards-per-line: (
+  xs: 2,
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 4
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+  @media (min-width: $breakpoint) {
+    .card-deck .card {
+      flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+    }
+  }
+}
+@media (min-width: 0) {
+  .card-deck .card {
+    flex: 0 0 auto;
+  }
+}

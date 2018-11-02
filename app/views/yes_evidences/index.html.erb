@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Yes Evidences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim</th>
+      <th>Source</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yes_evidences.each do |yes_evidence| %>
+      <tr>
+        <td><%= link_to yes_evidence.claim.title, yes_evidence.claim %></td>
+        <td><%= link_to yes_evidence.source.title, yes_evidence.source %></td>
+        <td><%= link_to 'Show', yes_evidence %></td>
+        <td><%= link_to 'Edit', edit_yes_evidence_path(yes_evidence) %></td>
+        <td><%= link_to 'Destroy', yes_evidence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yes Evidence', new_yes_evidence_path %>

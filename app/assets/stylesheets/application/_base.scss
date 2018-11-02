@@ -1,0 +1,86 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:500|Work+Sans:400,600|Abel';
+
+@mixin font-page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 32pt;
+}
+
+@mixin font-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+@mixin font-decoration-bar {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+@mixin font-section-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 20pt;
+}
+
+@mixin font-base {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 18pt;
+}
+
+@mixin font-small-text {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 16pt;
+}
+
+$a-tags: 'a', 'a:active', 'a:hover', 'a:visited';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @include font-base;
+  color: $primary;
+  background-color: $light;
+  padding-top: $header-height;
+}
+
+h2 {
+  @include font-page-title;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  display: inline;
+}
+
+h3 + a {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  background-color: $gray;
+  display: inline;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn label {
+  @extend .hand;
+}

@@ -1,0 +1,24 @@
+footer {
+  background-color: $white;
+  padding: 50px 0;
+  color: $white;
+  @include blue-gradient;
+  background-color: $dark-blue;
+  .row {
+    max-width: 1440px;
+    margin: auto;
+  }
+  a {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .social {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $blue;
+    }
+  }
+}

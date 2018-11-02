@@ -1,0 +1,16 @@
+<h1><%= person_name_and_dates @person %></h1>
+
+<h2>Jobs</h2>
+<%= render 'jobs/table', jobs: @person.jobs %>
+
+<h2>Sources</h2>
+<%= render 'sources/table', sources: @person.sources %>
+
+<h2>Claims</h2>
+<%= render 'claims/table', claims: @person.claims %>
+
+<h2>Involvements</h2>
+<%= render 'involvements/table', involvements: @person.involvements %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

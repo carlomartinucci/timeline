@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Involvment <%= @involvement.id %></h1>
+
+<p>
+  <strong>Person:</strong>
+  <%= link_to @involvement.person.name, @involvement.person %>
+</p>
+
+<p>
+  <strong>Claim:</strong>
+  <%= link_to @involvement.claim.title, @involvement.claim %>
+</p>
+
+<%= link_to 'Edit', edit_involvement_path(@involvement) %> |
+<%= link_to 'Back', involvements_path %>

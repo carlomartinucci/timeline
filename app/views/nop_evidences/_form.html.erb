@@ -1,0 +1,27 @@
+<%= form_with(model: nop_evidence, local: true) do |form| %>
+  <% if nop_evidence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nop_evidence.errors.count, "error") %> prohibited this nop_evidence from being saved:</h2>
+
+      <ul>
+      <% nop_evidence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :claim_id %>
+    <%= form.select :claim_id, Claim.all.pluck(:title, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_id %>
+    <%= form.select :source_id, Source.all.pluck(:title, :id) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th></th>
+      <th>Person</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% jobs.each do |job| %>
+      <tr>
+        <td><%= link_to job.id, job %></td>
+        <td><%= job_name_and_dates job %></td>
+        <td><%= link_to job.person.name, job.person %></td>
+        <td>
+          <%= link_to 'E', edit_job_path(job) %>
+          <%= link_to 'D', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+@import 'application/variables';
+
+@import 'bootstrap/scss/bootstrap';
+@import "tempusdominus-bootstrap-4.css";
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'toastr/toastr';
+
+@import 'application/mixins';
+@import 'application/base';
+@import 'application/overrides';
+@import 'application/utils';
+@import 'application/autoload/*';

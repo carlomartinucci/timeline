@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="<%= I18n.locale %>">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, user-scalable=0" name="viewport"/>
+  <%#= render 'favicon' %>
+  <% (I18n.available_locales - [I18n.locale]).each do |locale| %>
+    <link href="<%= request.original_url %>?locale=<%= locale %>" hreflang="<%= locale %>" rel="<%= :alternate %>"></link>
+  <% end %>
+  <title><%= Settings.name %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  <%= yield(:javascript_page) %>
+</head>
+
+<body class="d-flex flex-column">
+  <%= render 'flash' %>
+  <div class="flex-grow-1">
+    <%= render 'header' %>
+    <%= yield %>
+  </div>
+  <%= render 'footer' %>
+
+  <%# if Rails.env.production? %>
+    <%#= render 'application/integrations/analytics' %>
+    <%#= render 'application/integrations/facebook', facebook_app_id: Rails.application.secrets.facebook_app_id %>
+    <%#= render 'application/integrations/twitter' %>
+  <%# end %>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th></th>
+      <th>Last job</th>
+      <th>Sources</th>
+      <th>Claims</th>
+      <th>Involvements</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% people.each do |person| %>
+      <tr>
+        <td><%= link_to person.id, person %></td>
+        <td><%= person_name_and_dates person %></td>
+        <td><%= job_name_and_dates person.jobs.current_or_last %></td>
+        <td><%= person.sources.count %></td>
+        <td><%= person.claims.count %></td>
+        <td><%= person.involvements.count %></td>
+        <td>
+          <%= link_to 'E', edit_person_path(person) %>
+          <%= link_to 'D', person, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

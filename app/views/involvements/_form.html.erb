@@ -1,0 +1,27 @@
+<%= form_with(model: involvement, local: true) do |form| %>
+  <% if involvement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(involvement.errors.count, "error") %> prohibited this involvement from being saved:</h2>
+
+      <ul>
+      <% involvement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :person_id %>
+    <%= form.select :person_id, Person.all.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :claim_id %>
+    <%= form.select :claim_id, Claim.all.pluck(:title, :id) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

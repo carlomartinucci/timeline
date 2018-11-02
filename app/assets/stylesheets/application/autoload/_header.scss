@@ -1,0 +1,33 @@
+.header {
+  z-index: $zindex-header;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $white;
+  @each $a in $a-tags {
+    #{$a}:not(.dropdown-item) {
+      color: $white;
+    }
+  }
+  .manasearch .form-control {
+    height: 48px;
+  }
+}
+
+.header__top {
+  font-size: 14px;
+  line-height: $header-top-height;
+  vertical-align: middle;
+  background-color: $dark;
+  height: $header-top-height;
+  ul { @extend .list-inline; }
+  li { @extend .list-inline-item; }
+  .dropdown-menu i { color: $blue; }
+}
+
+.header__bottom {
+  background-color: $primary;
+  height: $header-bottom-height;
+}
