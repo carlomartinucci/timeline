@@ -66,7 +66,7 @@ module ApplicationHelper
       "<script>
         document.addEventListener('turbolinks:load', function(){
           $('##{id}').datetimepicker({
-            defaultDate: #{value.strftime('%d/%m/%Y')},
+            defaultDate: #{value&.strftime('%d/%m/%Y')},
             viewMode: 'years',
             format: 'DD/MM/YYYY'
           });
