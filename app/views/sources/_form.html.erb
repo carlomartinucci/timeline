@@ -11,32 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group row">
+    <%= form.label :title, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="form-group row">
+    <%= form.label :body, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.text_area :body, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :person_id %>
-    <%= form.select :person_id, Person.all.pluck(:name, :id) %>
+  <div class="form-group row">
+    <%= form.label :person_id, 'Claimed by', class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.select :person_id, Person.all.pluck(:name, :id), {}, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :released_at %>
-    <%= form.date_select :released_at, start_year: 1900, end_year: Time.zone.now.year, include_blank: true %>
+  <div class="form-group position-relative row">
+    <%= form.label :released_at, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.date_field :released_at, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+  <div class="form-group row">
+    <%= form.label :url, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :url, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit class: 'btn btn-primary btn-lg' %>
   </div>
 <% end %>

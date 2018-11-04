@@ -54,25 +54,26 @@ module ApplicationHelper
     '<div class="text-right text-info"><i class="fas fa-info"></i> It may take some minutes before the changes go live.</div>'.html_safe
   end
 
-  def datetimepicker form, field, value
+  def datetimepicker form, field, value, options={}
     id = "dtp-#{SecureRandom.hex[0..6]}"
-    label = form.label field
+    label = form.label field, class: options[:label_class]
     input = form.text_field field,
-      class: "form-control datetimepicker-input",
+      class: "form-control datetimepicker-input #{options[:input_class]}",
       id: id,
       autocomplete: 'off',
       data: { toggle: "datetimepicker", target: "##{id}" }
+    input_wrapper = content_tag :div, input, class: options[:input_wrapper_class]
     js = content_for :javascript_page do
       "<script>
         document.addEventListener('turbolinks:load', function(){
           $('##{id}').datetimepicker({
-            defaultDate: #{value&.strftime('%d/%m/%Y')},
+            defaultDate: '#{value&.strftime('%d/%m/%Y')}',
             viewMode: 'years',
             format: 'DD/MM/YYYY'
           });
         });
       </script>".html_safe
     end
-    label + input + js
+    label + input_wrapper + js
   end
 end

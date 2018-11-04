@@ -11,22 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group row">
+    <%= form.label :name, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :born_at %>
-    <%= form.date_select :born_at, start_year: 1900, end_year: Time.zone.now.year, include_blank: true %>
+  <div class="form-group position-relative row">
+    <%= form.label :born_at, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.date_field :born_at, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :dead_at %>
-    <%= form.date_select :dead_at, start_year: 1900, end_year: Time.zone.now.year, include_blank: true %>
+  <div class="form-group position-relative row">
+    <%= form.label :dead_at, class: "text-sm-right col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.date_field :dead_at, class: 'col-sm-8 form-control' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div data-controller="nested-form">
+    <h2 class="text-sm-right">Jobs</h2>
+
+    <%= form.fields_for :jobs, person.jobs do |ff| %>
+      <div data-target="nested-form.object">
+        <div class="form-group row">
+          <label class="text-sm-right col-sm-4 col-form-label">Name</label>
+          <div class="col-sm-8">
+            <%= ff.text_field :name, class: 'form-control' %>
+          </div>
+
+          <%= ff.label :started_at, class: "text-sm-right col-sm-4 col-form-label" %>
+          <div class="col-sm-8">
+            <%= ff.date_field :started_at, class: 'form-control' %>
+          </div>
+
+          <%= ff.label :ended_at, class: "text-sm-right col-sm-4 col-form-label" %>
+          <div class="col-sm-8">
+            <%= ff.date_field :ended_at, class: 'form-control' %>
+          </div>
+
+          <div class="col-sm-12 align-self-center text-sm-right pt-1">
+            <button type="button" class="btn btn-link text-danger" data-action="nested-form#remove" data-original-title="Remove" data-toggle="tooltip">
+              <%= ff.label :_destroy, class: 'mb-0' do %>
+                <%= ff.check_box :_destroy, class: 'd-none' %>
+                <i class="fas fa-trash"></i> Remove
+              <% end %>
+            </button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-group text-sm-right">
+      <button type="button" class="btn btn-primary btn-sm" data-action="nested-form#add">
+        <i class="fal fa-plus-circle"></i> Add new Job
+      </button>
+    </div>
+  </div>
+
+
+  <div class="text-center">
+    <%= form.submit class: "btn btn-primary btn-lg" %>
   </div>
 <% end %>

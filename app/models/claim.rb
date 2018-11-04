@@ -15,8 +15,11 @@
 class Claim < ApplicationRecord
   belongs_to :person
   has_many :yes_evidences
+  accepts_nested_attributes_for :yes_evidences, allow_destroy: true
   has_many :nop_evidences
+  accepts_nested_attributes_for :nop_evidences, allow_destroy: true
   has_many :involvements
+  accepts_nested_attributes_for :involvements, allow_destroy: true
 
   validates :title, presence: true
 end

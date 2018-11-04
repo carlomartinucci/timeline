@@ -15,10 +15,16 @@ class ClaimsController < ApplicationController
   # GET /claims/new
   def new
     @claim = Claim.new
+    @claim.involvements.build
+    @claim.nop_evidences.build
+    @claim.yes_evidences.build
   end
 
   # GET /claims/1/edit
   def edit
+    @claim.involvements.build
+    @claim.nop_evidences.build
+    @claim.yes_evidences.build
   end
 
   # POST /claims
@@ -69,6 +75,14 @@ class ClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def claim_params
-      params.require(:claim).permit(:title, :body, :person_id, :claimed_at, :happened_at)
+      nop_evidences_attributes = [:id, :claim_id, :source_id, :_destroy]
+      yes_evidences_attributes = [:id, :claim_id, :source_id, :_destroy]
+      involvements_attributes = [:id, :claim_id, :person_id, :_destroy]
+      params.require(:claim).permit(
+        :title, :body, :person_id, :claimed_at, :happened_at,
+        involvements_attributes: involvements_attributes,
+        nop_evidences_attributes: nop_evidences_attributes,
+        yes_evidences_attributes: yes_evidences_attributes
+      )
     end
 end

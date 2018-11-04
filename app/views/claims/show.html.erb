@@ -17,12 +17,12 @@
 
 <p>
   <strong>Claimed at:</strong>
-  <%=l @claim.claimed_at %>
+  <%=l @claim.claimed_at rescue nil %>
 </p>
 
 <p>
   <strong>Happened at:</strong>
-  <%=l @claim.happened_at %>
+  <%=l @claim.happened_at rescue nil %>
 </p>
 
 <%= link_to 'Edit', edit_claim_path(@claim) %> |

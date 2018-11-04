@@ -15,10 +15,12 @@ class PeopleController < ApplicationController
   # GET /people/new
   def new
     @person = Person.new
+    @person.jobs.build
   end
 
   # GET /people/1/edit
   def edit
+    @person.jobs.build
   end
 
   # POST /people
@@ -69,6 +71,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :born_at, :dead_at)
+      params.require(:person).permit(:name, :born_at, :dead_at, jobs_attributes: [:id, :person_id, :name, :started_at, :ended_at, :_destroy])
     end
 end

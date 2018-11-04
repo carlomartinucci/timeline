@@ -75,4 +75,15 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :remember_me) }
       devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password, :remember_me) }
     end
+
+    # def change_date_param(model, field)
+    #   return if params.dig(model, field).blank?
+
+    #   old_date = params.dig(model, field)
+    #   puts 'old_date', old_date
+    #   date = Date.strptime(old_date, '%Y-%m-%d')
+    #   puts 'date', date
+
+    #   params[model][field] = date
+    # end
 end

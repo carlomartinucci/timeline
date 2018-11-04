@@ -16,5 +16,4 @@ class Source < ApplicationRecord
   belongs_to :person
   has_many :yes_evidences
   has_many :nop_evidences
-
 end

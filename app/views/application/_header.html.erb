@@ -24,12 +24,8 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% if current_user&.admin? %>
                       <%= link_to 'people', people_path, class: 'dropdown-item' %>
-                      <%= link_to 'jobs', jobs_path, class: 'dropdown-item' %>
                       <%= link_to 'sources', sources_path, class: 'dropdown-item' %>
                       <%= link_to 'claims', claims_path, class: 'dropdown-item' %>
-                      <%= link_to 'yes_evidences', yes_evidences_path, class: 'dropdown-item' %>
-                      <%= link_to 'nop_evidences', nop_evidences_path, class: 'dropdown-item' %>
-                      <%= link_to 'involvements', involvements_path, class: 'dropdown-item' %>
                     <% end %>
                     <%= link_to destroy_session_path(current_user), method: :delete, class: 'dropdown-item' do %>
                       <i class="fas fa-fw fa-sign-out"></i> Log out
