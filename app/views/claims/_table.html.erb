@@ -17,8 +17,8 @@
         <td><%= link_to claim.id, claim %></td>
         <td><%= link_to claim.title, claim %></td>
         <td><%= link_to claim.person.name, claim.person %></td>
-        <td><%=l claim.happened_at, format: :short %></td>
-        <td><%=l claim.claimed_at, format: :short %></td>
+        <td><%=l(claim.happened_at, format: :short) if claim.happened_at.present? %></td>
+        <td><%=l(claim.claimed_at, format: :short) if claim.claimed_at.present? %></td>
         <td>
           Yes: <%= claim.yes_evidences.count %>
           Nop: <%= claim.nop_evidences.count %>
