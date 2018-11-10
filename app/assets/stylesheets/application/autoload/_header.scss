@@ -22,7 +22,10 @@
   vertical-align: middle;
   background-color: $dark;
   height: $header-top-height;
-  ul { @extend .list-inline; }
+  ul {
+    @extend .list-inline;
+    margin: 0;
+  }
   li { @extend .list-inline-item; }
   .dropdown-menu i { color: $blue; }
 }

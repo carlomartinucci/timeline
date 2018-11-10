@@ -1,5 +1,17 @@
-<h1>Sources</h1>
+<div class="container">
+  <div class="row text-center my-4">
+    <div class="col-4">
+      <h2><%= link_to 'Persone', people_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Affermazioni', claims_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Fonti', sources_path, class: 'btn btn-secondary btn-lg' %></h2>
+    </div>
+  </div>
 
-<%= render 'table', sources: @sources %>
+  <%= link_to 'Nuova fonte', new_source_path if can? :manage, Source %>
 
-<%= link_to 'New Source', new_source_path %>
+  <%= render 'table', sources: @sources %>
+</div>

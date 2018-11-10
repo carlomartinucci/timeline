@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  authorize_resource
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs

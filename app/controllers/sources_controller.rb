@@ -1,4 +1,5 @@
 class SourcesController < ApplicationController
+  authorize_resource
   before_action :set_source, only: [:show, :edit, :update, :destroy]
 
   # GET /sources

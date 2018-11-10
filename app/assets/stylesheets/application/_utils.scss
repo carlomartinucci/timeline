@@ -38,15 +38,6 @@
   width: 26px;
   font-size: 78%;
 }
-@each $color in $condition-colors {
-  .cond-#{nth($color, 1)} {
-    color: #{nth($color, 2)};
-  }
-  .badge-cond-#{nth($color, 1)} {
-    color: color-yiq(nth($color, 2));
-    background-color: nth($color, 2);
-  }
-}
 
 .form-control--sm {
   @extend .form-control;
@@ -211,9 +202,7 @@
 
 .logo {
   h1 {
-    display: inline-block;
-    text-indent: -9999px;
-    white-space: nowrap;
+    margin: 0;
   }
 }
 

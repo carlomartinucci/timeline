@@ -62,24 +62,7 @@ $tab-height:                  25px;
 $input-placeholder-color:     lighten($text-gray, 20%);
 $input-focus-box-shadow:      0 0 0 .2rem $secondary !default;
 
-$fa-font-path:       '../assets/@fortawesome/fontawesome-pro/webfonts';
-$keyrune_font_path:  '../assets/keyrune/fonts';
 $flag-icon-css-path: '../assets/flag-icon-css/flags';
-
-$condition-colors: (
-  'mint':              #2F9638,
-  'mt':                #2F9638,
-  'near-mint':         #87B726,
-  'nm':                #87B726,
-  'slightly-played':   #C8D400,
-  'sp':                #C8D400,
-  'moderately-played': #F9B000,
-  'mp':                #F9B000,
-  'heavily-played':    #EE7203,
-  'hp':                #EE7203,
-  'poor':              #B13907,
-  'po':                #B13907
-);
 
 // Header height
 $header-top-height:    72px;

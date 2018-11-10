@@ -1,7 +1,39 @@
 <div class="container">
-  <h1 class="text-center">Timeline</h1>
+  <div class="row text-center my-4">
+    <div class="col-4">
+      <h2><%= link_to 'Persone', people_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Affermazioni', claims_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Fonti', sources_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+  </div>
 
-  <%= link_to 'New Claim', new_claim_path %>
+  <h1>Timeline - Linea del tempo</h1>
 
-  <%= render 'claims/table', claims: @claims %>
+  <blockquote>
+    Ho letto, questa mattina, quel comunicato. L’ho letto e sinceramente devo dirvi questo, a Lei e a tutti coloro tra voi che sono interessati: leggete voi, attentamente, il comunicato e fate voi il vostro giudizio. Io non dirò una parola su questo. Credo che il comunicato parla da sé stesso, e voi avete la capacità giornalistica sufficiente per trarre le conclusioni. E’ un atto di fiducia: quando sarà passato un po’ di tempo e voi avrete tratto le conclusioni, forse io parlerò. Ma vorrei che la vostra maturità professionale faccia questo lavoro: vi farà bene, davvero. Va bene così.
+    <footer>
+      <cite><a target="_blank" href="https://w2.vatican.va/content/francesco/it/speeches/2018/august/documents/papa-francesco_20180826_irlanda-voloritorno.html">Papa Francesco</a>, intervista in aereo, 26 agosto 2018</cite>
+    </footer>
+  </blockquote>
+
+  <p>
+    Il 26 agosto 2018, <a target="_blank" href="https://it.wikipedia.org/wiki/Carlo_Maria_Vigan%C3%B2">Carlo Maria Viganò</a>, arcivescovo e già nunzio apostolico negli Stati Uniti d'America, pubblica una <a target="_blank" href="https://www.aldomariavalli.it/wp-content/uploads/2018/08/CMV-TESTIMONIANZA-CORRETTO.pdf">testimonianza</a> tramite il giornalista e vaticanista <a target="_blank" href="https://it.wikipedia.org/wiki/Aldo_Maria_Valli">Aldo Maria Valli</a>.
+  </p>
+
+  <p>
+    In questa testimonianza mons. Viganò ricostruisce la sua versione della storia degli abusi di <a target="_blank" href="https://it.wikipedia.org/wiki/Theodore_Edgar_McCarrick">Theodore Edgar McCarrick</a>, arcivescovo e già cardinale americano, e delle azioni intraprese o omesse da coloro che erano a conoscenza delle sue azioni.
+  </p>
+
+  <p>
+    A chi è interessato e ha <q>la capacità giornalistica sufficiente per trarre le conclusioni</q>, il Papa dice: <q>leggete voi, attentamente, il comunicato e fate voi il vostro giudizio</q>. <b>Questo sito è un tentativo di ricostruire una linea temporale degli eventi, raccogliendo e mettendo in fila le affermazioni delle persone coinvolte e le fonti a favore o contro.</b>
+  </p>
+
+  <p><em><%= Settings.name %></em> è liberamente accessibile a tutti. Chi volesse contribuire a popolarlo può registrarsi <%= link_to 'tramite la pagina di sign up', new_registration_path(:user) %>. Ogni contributo è fortemente gradito :)</p>
+
+  <p><em><%= Settings.name %></em> è un work in progress: alcune pagine sono brutte o funzionalmente non ineccepibili, un sacco di funzionalità mancano, eccetera. Qualsiasi suggerimento costruttivo è ben accetto. Sono reperibile all'indirizzo email <em>carlo punto martinucci chiocciola gmail punto com</em>. (meglio ancora, per chi usa <a href="https://github.com/">GitHub</a>, aprendo una <a href="https://github.com/carlomartinucci/timeline/issues/new">issue</a> o una pull request)</p>
+
 </div>

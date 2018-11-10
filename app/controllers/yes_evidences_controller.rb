@@ -1,4 +1,5 @@
 class YesEvidencesController < ApplicationController
+  authorize_resource
   before_action :set_yes_evidence, only: [:show, :edit, :update, :destroy]
 
   # GET /yes_evidences

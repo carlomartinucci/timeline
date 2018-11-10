@@ -30,7 +30,7 @@
 @mixin font-base {
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 18px;
   line-height: 18pt;
 }
 
@@ -65,17 +65,6 @@ h3 {
   display: inline;
 }
 
-h3 + a {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  background-color: $gray;
-  display: inline;
-  padding: 5px 15px;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-
 h4 {
   font-size: 18px;
   font-weight: bold;
@@ -83,4 +72,23 @@ h4 {
 
 .btn label {
   @extend .hand;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }

@@ -1,5 +1,17 @@
-<h1>Claims</h1>
+<div class="container">
+  <div class="row text-center my-4">
+    <div class="col-4">
+      <h2><%= link_to 'Persone', people_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Affermazioni', claims_path, class: 'btn btn-secondary btn-lg' %></h2>
+    </div>
+    <div class="col-4">
+      <h2><%= link_to 'Fonti', sources_path, class: 'btn btn-primary btn-lg' %></h2>
+    </div>
+  </div>
 
-<%= render 'table', claims: @claims %>
+  <%= link_to 'Nuova affermazione', new_claim_path if can? :create, Claim %>
 
-<%= link_to 'New Claim', new_claim_path %>
+  <%= render 'table', claims: @claims %>
+</div>

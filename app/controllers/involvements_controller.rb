@@ -1,4 +1,5 @@
 class InvolvementsController < ApplicationController
+  authorize_resource
   before_action :set_involvement, only: [:show, :edit, :update, :destroy]
 
   # GET /involvements

@@ -1,23 +1,31 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
+      <% if can? :manage, Job %>
+        <th>#</th>
+      <% end %>
       <th></th>
       <th>Person</th>
-      <th></th>
+      <% if can? :manage, Job %>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job %></td>
+        <% if can? :manage, Job %>
+          <td><%= link_to job.id, job %></td>
+        <% end %>
         <td><%= job_name_and_dates job %></td>
         <td><%= link_to job.person.name, job.person %></td>
-        <td>
-          <%= link_to 'E', edit_job_path(job) %>
-          <%= link_to 'D', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <% if can? :manage, Job %>
+          <td>
+            <%= link_to 'E', edit_job_path(job) %>
+            <%= link_to 'D', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

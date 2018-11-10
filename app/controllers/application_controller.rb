@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     elsif current_user
       redirect_to root_path, alert: exception.message
     else
-      redirect_to new_user_session_path, alert: I18n.t('unauthorized.unlogged')
+      redirect_to new_user_session_path, alert: 'Per favore, registrati o effettua il log in'
     end
   end
 

@@ -1,21 +1,27 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
+      <% if can? :manage, Claim %>
+        <th>#</th>
+      <% end %>
       <th></th>
       <th>Person</th>
       <th>Happened at</th>
       <th>Claimed at</th>
       <th>Evidences</th>
-      <th colspan="3"></th>
+      <% if can? :manage, Claim %>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% claims.each do |claim| %>
       <tr>
-        <td><%= link_to claim.id, claim %></td>
-        <td><%= link_to claim.title, claim %></td>
+        <% if can? :manage, Claim %>
+          <td><%= link_to claim.id, claim %></td>
+        <% end %>
+        <td><%= claim.title %></td>
         <td><%= link_to claim.person.name, claim.person %></td>
         <td><%=l(claim.happened_at, format: :short) if claim.happened_at.present? %></td>
         <td><%=l(claim.claimed_at, format: :short) if claim.claimed_at.present? %></td>
@@ -23,10 +29,12 @@
           Yes: <%= claim.yes_evidences.count %>
           Nop: <%= claim.nop_evidences.count %>
         </td>
-        <td>
-          <%= link_to 'E', edit_claim_path(claim) %>
-          <%= link_to 'D', claim, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <% if can? :manage, Claim %>
+          <td>
+            <%= link_to 'E', edit_claim_path(claim) %>
+            <%= link_to 'D', claim, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

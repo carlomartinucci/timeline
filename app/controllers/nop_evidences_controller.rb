@@ -1,4 +1,5 @@
 class NopEvidencesController < ApplicationController
+  authorize_resource
   before_action :set_nop_evidence, only: [:show, :edit, :update, :destroy]
 
   # GET /nop_evidences

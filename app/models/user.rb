@@ -13,6 +13,8 @@
 #
 
 class User < ApplicationRecord
+  EDITOR_EMAILS = ['michele.martinucci@gmail.com'].freeze
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -24,5 +26,9 @@ class User < ApplicationRecord
 
   def admin?
     email == 'carlo.martinucci@gmail.com'
+  end
+
+  def editor?
+    email.in? EDITOR_EMAILS
   end
 end

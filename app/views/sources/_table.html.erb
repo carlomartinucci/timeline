@@ -1,27 +1,35 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
+      <% if can? :manage, Source %>
+        <th>#</th>
+      <% end %>
       <th></th>
       <th>Person</th>
       <th>Released at</th>
       <th>Url</th>
-      <th colspan="3"></th>
+      <% if can? :manage, Source %>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% sources.each do |source| %>
       <tr>
-        <td><%= link_to source.id, source %></td>
+        <% if can? :manage, Source %>
+          <td><%= link_to source.id, source %></td>
+        <% end %>
         <td><%= link_to source.title, source %></td>
         <td><%= link_to source.person.name, source.person %></td>
         <td><%=l source.released_at, format: :short %></td>
         <td><%= source_link_to_url source %></td>
-        <td>
-          <%= link_to 'E', edit_source_path(source) %>
-          <%= link_to 'D', source, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <% if can? :manage, Source %>
+          <td>
+            <%= link_to 'E', edit_source_path(source) if can? :manage, Source %>
+            <%= link_to 'D', source, method: :delete, data: { confirm: 'Are you sure?' } if can? :manage, Source %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
