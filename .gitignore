@@ -32,3 +32,5 @@ config/environments/*.local.yml
 
 timeline_development
 timeline_test
+
+config/initializers/dev_env_variables.rb

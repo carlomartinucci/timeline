@@ -13,7 +13,8 @@
 #
 
 class User < ApplicationRecord
-  EDITOR_EMAILS = ['michele.martinucci@gmail.com'].freeze
+  ADMIN_EMAILS = (ENV['ADMIN_EMAILS']&.split(',').presence || []).freeze
+  EDITOR_EMAILS = (ENV['EDITOR_EMAILS']&.split(',').presence || []).freeze
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -25,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def admin?
-    email == 'carlo.martinucci@gmail.com'
+    email.in? ADMIN_EMAILS
   end
 
   def editor?
